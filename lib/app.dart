@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ostad_14_task_manager_project_ak_pc/screens/splash_screen.dart';
+import 'package:ostad_14_task_manager_project_ak_pc/utils/app_colors.dart';
 class TaskManagerApp extends StatelessWidget {
   const TaskManagerApp({super.key});
 
@@ -27,6 +28,16 @@ class TaskManagerApp extends StatelessWidget {
           border: OutlineInputBorder(
             borderSide: BorderSide.none,
             borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+        filledButtonTheme: FilledButtonThemeData(
+          style: FilledButton.styleFrom(
+            backgroundColor: AppColors.primaryColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+            fixedSize: Size.fromWidth(double.maxFinite),
+            padding: EdgeInsets.symmetric(vertical: 12),
           ),
         ),
       ),
