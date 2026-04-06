@@ -4,7 +4,6 @@ import '../utils/asset_path.dart';
 import '../widgets/screen_background.dart';
 import 'login_screen.dart';
 
-
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -13,10 +12,12 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
-  Future<void>moveToNextScreen() async{
-   await Future.delayed(Duration(seconds: 3), () {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+  Future<void> moveToNextScreen() async {
+    await Future.delayed(Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => LoginScreen()),
+      );
     });
   }
 
@@ -29,8 +30,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body: ScreenBackground(child: Center(child: SvgPicture.asset(AssetPaths.logoSVG)),)
+    return Scaffold(
+      body: ScreenBackground(
+        child: Center(child: SvgPicture.asset(AssetPaths.logoSVG)),
+      ),
     );
   }
 }

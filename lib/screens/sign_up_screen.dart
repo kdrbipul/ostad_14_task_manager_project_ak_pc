@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:ostad_14_task_manager_project_ak_pc/screens/sign_up_screen.dart';
 import 'package:ostad_14_task_manager_project_ak_pc/widgets/screen_background.dart';
 
 import '../utils/app_button.dart';
 import '../utils/app_colors.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,11 +27,13 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               SizedBox(height: 150),
               Text(
-                'Get Started With',
+                'Join With Us',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               SizedBox(height: 10),
-              TextFormField(decoration: InputDecoration(hintText: 'Email')),
+              TextFormField(
+                keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(hintText: 'Email')),
               SizedBox(height: 10),
               TextFormField(
                 obscureText: true,
@@ -62,14 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SignUpScreen(),
-                            ),
-                          );
-                        },
+                        onPressed: () {},
                         child: Text(
                           'Sign Up',
                           style: TextStyle(
@@ -89,3 +83,5 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
+
+
