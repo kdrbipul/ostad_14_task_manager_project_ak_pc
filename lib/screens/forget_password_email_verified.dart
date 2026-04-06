@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:ostad_14_task_manager_project_ak_pc/screens/login_screen.dart';
+import 'package:ostad_14_task_manager_project_ak_pc/screens/sign_up_screen.dart';
 import 'package:ostad_14_task_manager_project_ak_pc/widgets/screen_background.dart';
 
 import '../utils/app_button.dart';
 import '../utils/app_colors.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+class ForgetPasswordEmailVerified extends StatefulWidget {
+  const ForgetPasswordEmailVerified({super.key});
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<ForgetPasswordEmailVerified> createState() => _ForgetPasswordEmailVerifiedState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _ForgetPasswordEmailVerifiedState extends State<ForgetPasswordEmailVerified> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,37 +27,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 100),
+              SizedBox(height: 150),
               Text(
-                'Join With Us',
+                'Your email address',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               SizedBox(height: 10),
-              TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(hintText: 'Email')),
-              SizedBox(height: 10),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                  decoration: InputDecoration(hintText: 'First Name')),
-              SizedBox(height: 10),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                  decoration: InputDecoration(hintText: 'Last Name')),
-              SizedBox(height: 10),
-              TextFormField(
-                keyboardType: TextInputType.number,
-                  decoration: InputDecoration(hintText: 'Mobile')),
-              SizedBox(height: 10),
-              TextFormField(
-                obscureText: true,
-                decoration: InputDecoration(hintText: 'Password'),
-              ),
-              SizedBox(height: 10),
-              TextFormField(
-                obscureText: true,
-                decoration: InputDecoration(hintText: 'Confirm Password'),
-              ),
+              TextFormField(decoration: InputDecoration(hintText: 'Email')),
               SizedBox(height: 10),
               AppButton(),
               SizedBox(height: 30),
@@ -63,7 +41,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Already have an account?',
+                    "Already have an account?",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
@@ -71,7 +49,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginScreen(),
+                        ),
+                      );
                     },
                     child: Text(
                       'Login',
@@ -90,5 +73,3 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 }
-
-

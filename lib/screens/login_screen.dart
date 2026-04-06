@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ostad_14_task_manager_project_ak_pc/screens/forget_password_email_verified.dart';
 import 'package:ostad_14_task_manager_project_ak_pc/screens/sign_up_screen.dart';
 import 'package:ostad_14_task_manager_project_ak_pc/widgets/screen_background.dart';
 
@@ -45,7 +46,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ForgetPasswordEmailVerified(),
+                        ),
+                      );
+                    },
                     child: Text(
                       'Forgot Password?',
                       style: TextStyle(color: Colors.grey),
@@ -55,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Already have an account?',
+                        "Don't have an account? Please",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
