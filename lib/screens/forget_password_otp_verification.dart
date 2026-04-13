@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:ostad_14_task_manager_project_ak_pc/screens/login_screen.dart';
 import 'package:ostad_14_task_manager_project_ak_pc/widgets/screen_background.dart';
-
 import '../utils/app_button.dart';
 import '../utils/app_colors.dart';
 
-class ForgetPasswordEmailVerified extends StatefulWidget {
-  const ForgetPasswordEmailVerified({super.key});
+class ForgetPasswordOtpVarification extends StatefulWidget {
+  const ForgetPasswordOtpVarification({super.key});
 
   @override
-  State<ForgetPasswordEmailVerified> createState() => _ForgetPasswordEmailVerifiedState();
+  State<ForgetPasswordOtpVarification> createState() => _ForgetPasswordOtpVarificationState();
 }
 
-class _ForgetPasswordEmailVerifiedState extends State<ForgetPasswordEmailVerified> {
+class _ForgetPasswordOtpVarificationState extends State<ForgetPasswordOtpVarification> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

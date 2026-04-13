@@ -7,7 +7,7 @@ class AssetPaths{
   // static const String copyright = 'Copyright © 2023 Akash Mol. All rights reserved.';
   // static const String description = 'A new Flutter project.';
 
-  static  String _imagePath = 'assets/images/';
-  static  String backgroundSVG = '$_imagePath/background.svg';
-  static  String logoSVG = '$_imagePath/logo.svg';
+  static  final String _imagePath = 'assets/images/';
+  static final  String backgroundSVG = '$_imagePath/background.svg';
+  static final  String logoSVG = '$_imagePath/logo.svg';
 }

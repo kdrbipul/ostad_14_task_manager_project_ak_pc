@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ostad_14_task_manager_project_ak_pc/screens/forget_password_email_verified.dart';
 import 'package:ostad_14_task_manager_project_ak_pc/screens/sign_up_screen.dart';
 import 'package:ostad_14_task_manager_project_ak_pc/widgets/screen_background.dart';
-
 import '../utils/app_button.dart';
 import '../utils/app_colors.dart';
 
