@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ostad_14_task_manager_project_ak_pc/screens/forget_password_email_verified.dart';
+import 'package:ostad_14_task_manager_project_ak_pc/screens/main_navigation_holder_screen.dart';
 import 'package:ostad_14_task_manager_project_ak_pc/screens/sign_up_screen.dart';
 import 'package:ostad_14_task_manager_project_ak_pc/widgets/screen_background.dart';
 import '../utils/app_button.dart';
@@ -39,7 +40,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 decoration: InputDecoration(hintText: 'Password'),
               ),
               SizedBox(height: 10),
-              AppButton(child: Icon(Icons.arrow_forward), onPressed: () {  },),
+              AppButton(
+                child: Icon(Icons.arrow_forward),
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MainNavigationHolderScreen(),
+                    ),
+                  );
+                },
+              ),
               SizedBox(height: 30),
               Column(
                 // mainAxisAlignment: MainAxisAlignment.center,

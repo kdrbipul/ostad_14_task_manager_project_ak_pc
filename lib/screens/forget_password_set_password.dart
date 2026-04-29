@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:ostad_14_task_manager_project_ak_pc/screens/forget_password_set_password.dart';
 import 'package:ostad_14_task_manager_project_ak_pc/screens/login_screen.dart';
 import 'package:ostad_14_task_manager_project_ak_pc/widgets/screen_background.dart';
 import '../utils/app_button.dart';
 import '../utils/app_colors.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-class ForgetPasswordOtpVarification extends StatefulWidget {
-  const ForgetPasswordOtpVarification({super.key});
+class ForgetPasswordSetPassword extends StatefulWidget {
+  const ForgetPasswordSetPassword({super.key});
 
   @override
-  State<ForgetPasswordOtpVarification> createState() =>
-      _ForgetPasswordOtpVarificationState();
+  State<ForgetPasswordSetPassword> createState() =>
+      _ForgetPasswordSetPasswordState();
 }
 
-class _ForgetPasswordOtpVarificationState
-    extends State<ForgetPasswordOtpVarification> {
+class _ForgetPasswordSetPasswordState extends State<ForgetPasswordSetPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,52 +29,34 @@ class _ForgetPasswordOtpVarificationState
             children: [
               SizedBox(height: 150),
               Text(
-                'PIN Verification',
+                'Set Password',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               SizedBox(height: 10),
-              PinInput(
-                keyboardType: TextInputType.number,
+              Text(
+                'Minimum Password Should be 8 characters and Combination of '
+                'Uppercase, Lowercase, Numbers and Special Characters',
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyLarge!.copyWith(color: Colors.grey),
+              ),
+              SizedBox(height: 10),
+              TextFormField(
                 obscureText: true,
-                length: 6,
-                builder: (context, cells) {
-                  return Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: cells.map((cell) {
-                      return Container(
-                        width: 40,
-                        height: 40,
-                        margin: EdgeInsets.symmetric(horizontal: 8),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.rectangle,
-                          color: cell.isFocused
-                              ? Colors.blue
-                              : Colors.grey[200],
-                          border: Border.all(
-                            color: cell.isComplete ? Colors.green : Colors.red,
-                          ),
-                        ),
-                        child: Center(
-                          child: Text(
-                            cell.character ?? '',
-                            style: TextStyle(fontSize: 20),
-                          ),
-                        ),
-                      );
-                    }).toList(),
-                  );
-                },
-                onCompleted: (pin) => print('PIN: $pin'),
+                decoration: InputDecoration(hintText: 'Password'),
+              ),
+              SizedBox(height: 10),
+              TextFormField(
+                obscureText: true,
+                decoration: InputDecoration(hintText: 'Confirm Password'),
               ),
               SizedBox(height: 10),
               AppButton(
                 child: Icon(Icons.arrow_forward),
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => ForgetPasswordSetPassword(),
-                    ),
+                    MaterialPageRoute(builder: (context) => LoginScreen()),
                   );
                 },
               ),
