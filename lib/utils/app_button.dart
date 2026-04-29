@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 class AppButton extends StatelessWidget {
+
+  final Widget child;
+  final VoidCallback onPressed;
   const AppButton({
-    super.key,
+    super.key, required this.child, required this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
     return FilledButton(
-      onPressed: () {},
-      child: Icon(Icons.arrow_circle_right_outlined),
+      onPressed: onPressed,
+      child: child,
     );
   }
 }

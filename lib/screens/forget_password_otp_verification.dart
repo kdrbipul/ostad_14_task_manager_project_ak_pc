@@ -33,7 +33,7 @@ class _ForgetPasswordOtpVarificationState extends State<ForgetPasswordOtpVarific
               SizedBox(height: 10),
               TextFormField(decoration: InputDecoration(hintText: 'Email')),
               SizedBox(height: 10),
-              AppButton(),
+              AppButton(child: Icon(Icons.arrow_forward), onPressed: () {  },),
               SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

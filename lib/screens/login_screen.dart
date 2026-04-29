@@ -39,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 decoration: InputDecoration(hintText: 'Password'),
               ),
               SizedBox(height: 10),
-              AppButton(),
+              AppButton(child: Icon(Icons.arrow_forward), onPressed: () {  },),
               SizedBox(height: 30),
               Column(
                 // mainAxisAlignment: MainAxisAlignment.center,

@@ -57,7 +57,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 decoration: InputDecoration(hintText: 'Confirm Password'),
               ),
               SizedBox(height: 10),
-              AppButton(),
+              AppButton(child: Icon(Icons.arrow_forward), onPressed: () {  },),
               SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

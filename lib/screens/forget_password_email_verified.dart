@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ostad_14_task_manager_project_ak_pc/screens/forget_password_otp_verification.dart';
 import 'package:ostad_14_task_manager_project_ak_pc/screens/login_screen.dart';
 import 'package:ostad_14_task_manager_project_ak_pc/widgets/screen_background.dart';
 
@@ -9,10 +10,12 @@ class ForgetPasswordEmailVerified extends StatefulWidget {
   const ForgetPasswordEmailVerified({super.key});
 
   @override
-  State<ForgetPasswordEmailVerified> createState() => _ForgetPasswordEmailVerifiedState();
+  State<ForgetPasswordEmailVerified> createState() =>
+      _ForgetPasswordEmailVerifiedState();
 }
 
-class _ForgetPasswordEmailVerifiedState extends State<ForgetPasswordEmailVerified> {
+class _ForgetPasswordEmailVerifiedState
+    extends State<ForgetPasswordEmailVerified> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +37,17 @@ class _ForgetPasswordEmailVerifiedState extends State<ForgetPasswordEmailVerifie
               SizedBox(height: 10),
               TextFormField(decoration: InputDecoration(hintText: 'Email')),
               SizedBox(height: 10),
-              AppButton(),
+              AppButton(
+                child: Icon(Icons.arrow_forward),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ForgetPasswordOtpVarification(),
+                    ),
+                  );
+                },
+              ),
               SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -50,9 +63,7 @@ class _ForgetPasswordEmailVerifiedState extends State<ForgetPasswordEmailVerifie
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => LoginScreen(),
-                        ),
+                        MaterialPageRoute(builder: (context) => LoginScreen()),
                       );
                     },
                     child: Text(
