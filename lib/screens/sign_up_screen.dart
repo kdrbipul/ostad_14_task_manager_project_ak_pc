@@ -19,9 +19,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _mobileController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,32 +43,86 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(height: 10),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(hintText: 'Email'),
+                    decoration: InputDecoration(hintText: 'Email'),
                     controller: _emailController,
+                    validator: (email) {
+                      if (email!.isEmpty &&
+                          !RegExp(
+                            r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
+                          ).hasMatch(email)) {
+                        return 'Please enter your email';
+                      }
+                      return null;
+                    },
                   ),
                   SizedBox(height: 10),
                   TextFormField(
                     keyboardType: TextInputType.text,
-                      decoration: InputDecoration(hintText: 'First Name'),
-                    controller: _firstNameController,),
+                    decoration: InputDecoration(hintText: 'First Name'),
+                    controller: _firstNameController,
+                    validator: (value){
+                      if(value == null || value.isEmpty){
+                        return 'Please enter your first name';
+                      }
+                      else{
+                        return null;
+                      }
+                    },
+                  ),
                   SizedBox(height: 10),
                   TextFormField(
                     keyboardType: TextInputType.text,
-                      decoration: InputDecoration(hintText: 'Last Name'),
-                    controller: _lastNameController,),
+                    decoration: InputDecoration(hintText: 'Last Name'),
+                    controller: _lastNameController,
+                    validator: (value){
+                      if(value == null || value.isEmpty){
+                        return 'Please enter your last name';
+                      }
+                      else{
+                        return null;
+                      }
+                    },
+                  ),
                   SizedBox(height: 10),
                   TextFormField(
                     keyboardType: TextInputType.number,
-                      decoration: InputDecoration(hintText: 'Mobile'),
-                    controller: _mobileController,),
+                    decoration: InputDecoration(hintText: 'Mobile'),
+                    controller: _mobileController,
+                    validator: (value){
+                      if(value == null || value.isEmpty){
+                        return 'Please enter your phone number';
+                      }
+                      else{
+                        return null;
+                      }
+                    },
+                  ),
                   SizedBox(height: 10),
                   TextFormField(
                     obscureText: true,
                     decoration: InputDecoration(hintText: 'Password'),
                     controller: _passwordController,
+                    validator: (value){
+                      if(value == null || value.isEmpty){
+                        return 'Please enter password';
+                      }
+                      else{
+                        return null;
+                      }
+                    },
                   ),
                   SizedBox(height: 10),
-                  AppButton(child: Icon(Icons.arrow_forward), onPressed: () {  },),
+                  AppButton(child: Icon(Icons.arrow_forward), onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text('Processing Data'),
+                        ),
+                      );
+                    }
+                    _formKey.currentState!.save();
+                    setState(() {});
+                  }),
                   SizedBox(height: 30),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -105,6 +156,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       ),
     );
   }
+
   @override
   void dispose() {
     // TODO: implement dispose
@@ -116,5 +168,3 @@ class _SignUpScreenState extends State<SignUpScreen> {
     _passwordController.dispose();
   }
 }
-
-
